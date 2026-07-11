@@ -10,9 +10,9 @@
   --bg-primary: #faf8f5; /* Light Ivory */
   --bg-secondary: #f4efe6; /* Travertine Cream */
   --bg-tertiary: #eae4d8; /* Muted Sand */
-  --text-primary: #1c1c1e; /* Dark Charcoal */
-  --text-secondary: #575762; /* Slate Grey */
-  --text-muted: #8e8e9c; /* Muted Grey */
+  --text-primary: #0a0a0c; /* Deep Charcoal / Black */
+  --text-secondary: #2c2c2e; /* Darker Slate Grey */
+  --text-muted: #55555c; /* Readable Muted Grey */
   
   --accent-gold: #b08f5c; /* Rich Muted Gold */
   --accent-gold-hover: #987848;
@@ -49,7 +49,7 @@ html {
 body {
   font-family: var(--font-sans);
   line-height: 1.62;
-  font-weight: 300;
+  font-weight: 400;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   background: transparent;
@@ -142,10 +142,10 @@ img {
 .section-title {
   font-family: var(--font-serif);
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 400; /* Increased weight for crisp readability */
   line-height: 1.1;
   margin-bottom: 24px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 @media (max-width: 768px) {
