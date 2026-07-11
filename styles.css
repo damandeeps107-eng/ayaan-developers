@@ -1819,17 +1819,44 @@ img {
   }
 
   /* Hero Section Mobile adjustments */
+  .hero {
+    height: auto !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 110px !important;
+    padding-bottom: 50px !important;
+    overflow: visible !important;
+  }
+
+  .nav-brand {
+    font-size: 1.1rem !important;
+  }
+  
+  .nav-brand span {
+    font-size: 0.65rem !important;
+    margin-left: 6px !important;
+    padding-left: 6px !important;
+  }
+
   .hero-content {
-    margin-top: 20px;
+    margin-top: 0;
     text-align: center;
+    z-index: 3;
   }
   
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.5rem !important;
+    line-height: 1.15;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   }
 
   .hero-description {
-    margin: 0 auto 30px auto;
+    font-size: 0.95rem !important;
+    line-height: 1.5;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    margin: 0 auto 24px auto !important;
   }
 
   .hero .time-simulator-widget {
@@ -1837,8 +1864,9 @@ img {
     bottom: auto;
     right: auto;
     width: 100%;
-    margin-top: 40px;
-    box-shadow: none;
+    margin-top: 24px !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+    background: rgba(10, 10, 12, 0.65) !important;
   }
 
   /* Philosophy Stats */
