@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Social Meta Tags -->
+  <title>Ayaan Developers | Premium Minimal Luxury Real Estate</title>
+  <meta name="description" content="Ayaan Developers creates ultra-luxury, architecturally significant private estates, sky penthouses, and minimal modernist pavilions worldwide.">
+  <meta name="keywords" content="luxury real estate, minimalist architecture, ayaan developers, premium homes, custom villas, modern estate">
+  <meta name="author" content="Ayaan Developers">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ayaan Developers | Premium Minimal Luxury Real Estate">
+  <meta property="og:description" content="Explore an elite portfolio of custom villas and architectural sanctuaries engineered for modern living.">
+  <meta property="og:image" content="../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_golden_1783766701690.png">
+  
+  <!-- Stylesheets & CDN Icons -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Premium Inline Overrides for CAD aesthetic and extra micro-animations */
+    .arch-divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+      margin: 80px 0;
+      position: relative;
+    }
+    
+    .arch-divider::after {
+      content: '✦';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--bg-primary);
+      padding: 0 16px;
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+    }
+    
+    /* CAD Compass Indicator */
+    .blueprint-compass {
+      stroke: rgba(176, 143, 92, 0.4);
+      fill: none;
+      stroke-width: 1;
+    }
+    
+    /* Configurator Step Indicators */
+    .step-header-indicator {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .step-circle {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      box-shadow: 0 0 10px rgba(176, 143, 92, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- GPU-Accelerated Fixed Backdrop Layer -->
+  <div class="fixed-bg-layer"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="nav-brand">
+        AYAAN<span>DEVELOPERS</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#blueprint">Blueprint</a></li>
+        <li><a href="#upgrades">Studio</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Inquire</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section & Time-of-Day Image Slideshow -->
+  <header class="hero" id="hero">
+    <!-- Image Slideshow Background -->
+    <div class="hero-slider-bg">
+      <div class="hero-bg-slide" id="bg-dawn" style="background-image: url('../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_dawn_1783766680159.png');"></div>
+      <div class="hero-bg-slide" id="bg-golden" style="background-image: url('../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_golden_1783766701690.png');"></div>
+      <div class="hero-bg-slide" id="bg-dusk" style="background-image: url('../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_dusk_1783766720975.png');"></div>
+      <div class="hero-bg-slide" id="bg-night" style="background-image: url('../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_night_1783766740739.png');"></div>
+      <div class="hero-bg-slide" id="bg-interior" style="background-image: url('../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_interior_1783768377808.png');"></div>
+      <div class="hero-bg-slide" id="bg-pool" style="background-image: url('../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_pool_1783768398540.png');"></div>
+    </div>
+    
+    <!-- Time blending overlay container -->
+    <div class="hero-overlay time-overlay-golden" id="heroOverlay"></div>
+    
+    <div class="container hero-content">
+      <span class="hero-tagline">Architectural Landmarks</span>
+      <h1 class="hero-title">Sanctuaries Crafted<br>For Legacies</h1>
+      <p class="hero-description">An elite global portfolio of architecturally significant estates and bespoke minimalist pavilions designed by Ayaan Developers.</p>
+      
+      <!-- Discovery Console Search Bar (Price-Free) -->
+      <div class="search-console glass-panel">
+        <div class="search-field">
+          <label for="searchLoc"><i class="fa-solid fa-location-crosshairs" style="color: var(--accent-gold); margin-right: 6px;"></i> Location</label>
+          <input type="text" id="searchLoc" placeholder="e.g. Malibu, California" value="Malibu, California" readonly>
+        </div>
+        <div class="search-field" style="border-right: none;">
+          <label for="searchType"><i class="fa-solid fa-cubes" style="color: var(--accent-gold); margin-right: 6px;"></i> Property Type</label>
+          <select id="searchType">
+            <option value="villa">Signature Villa</option>
+            <option value="penthouse">Sky Penthouse</option>
+            <option value="estate">Alpine Estate</option>
+          </select>
+        </div>
+        <button class="search-btn" onclick="document.getElementById('collection').scrollIntoView({behavior: 'smooth'})">
+          Discover <i class="fa-solid fa-arrow-right-long" style="margin-left: 8px;"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Time of Day Control Widget -->
+    <div class="time-simulator-widget glass-panel">
+      <div class="widget-title">
+        <span>Lighting Simulator</span>
+        <i class="fa-solid fa-sun" id="sun-icon" style="color: var(--accent-gold);"></i>
+      </div>
+      <div class="time-btn-group">
+        <button class="time-btn active">Dawn</button>
+        <button class="time-btn">Day</button>
+        <button class="time-btn">Dusk</button>
+        <button class="time-btn">Night</button>
+      </div>
+      <div class="widget-label">
+        <span>Simulated Time:</span>
+        <span id="simulatedTime">05:30 PM</span>
+      </div>
+      <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 6px; letter-spacing: 0.05em;" id="simulatedTimeName">Golden Hour</div>
+      <input type="range" id="timeRange" min="0" max="5" step="1" value="1" style="width: 100%; margin-top: 14px; accent-color: var(--accent-gold); cursor: ew-resize;">
+    </div>
+  </header>
+
+  <!-- About / Philosophy Section -->
+  <section class="philosophy" id="philosophy">
+    <div class="container philosophy-grid">
+      <div class="philosophy-left">
+        <span class="section-tag">Philosophy</span>
+        <h2 class="section-title">Pure Sourcing.<br>Precise Geometry.</h2>
+        <h3>"We do not build structures; we design frames for light and nature."</h3>
+        <p>Ayaan Developers represents a global collective of architects and structural engineers dedicated to the science of minimalist luxury. By eliminating the unnecessary, we expose the essence of luxury living space.</p>
+        <p>Our commitment is centered on carbon-neutral engineering, custom stone masonry, and high-performance glass installations that challenge structural boundaries.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">14+</div>
+          <div class="stat-label">Architectural Awards</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">$1.2B</div>
+          <div class="stat-label">Active Portfolio</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Global Design Hubs</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Sustainable Sourcing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Collections Section -->
+  <section class="featured-collection" id="collection">
+    <div class="container">
+      <div class="collection-header">
+        <div>
+          <span class="section-tag">Active Portfolio</span>
+          <h2 class="section-title">The Signature Collection</h2>
+        </div>
+        <div class="collection-filters">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="villa">Villas</button>
+          <button class="filter-tab" data-filter="penthouse">Penthouses</button>
+          <button class="filter-tab" data-filter="estate">Estates</button>
+        </div>
+      </div>
+      <div class="properties-grid" id="propertiesGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <hr class="arch-divider">
+
+  <!-- Interactive Floor Plan Explorer Section -->
+  <section class="floor-plan-section" id="blueprint">
+    <div class="container">
+      <span class="section-tag">Interactive CAD</span>
+      <h2 class="section-title">Aura Cliffhouse Floor Plan</h2>
+      <p class="section-desc">Interact with the technical blueprint vectors to explore individual layout zones, dimensions, and architectural rendering views.</p>
+      
+      <div class="floor-plan-grid">
+        <!-- Blueprint Left Side -->
+        <div class="blueprint-container">
+          <svg class="blueprint-svg" viewBox="0 0 520 340">
+            <!-- Grid Background Overlay -->
+            <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0, 0, 0, 0.015)" stroke-width="0.7"/>
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#gridPattern)"/>
+            
+            <!-- External Walls Blueprint -->
+            <rect x="30" y="30" width="460" height="280" fill="none" stroke="rgba(176, 143, 92, 0.2)" stroke-width="2"/>
+            <rect x="26" y="26" width="468" height="288" fill="none" stroke="rgba(176, 143, 92, 0.08)" stroke-width="0.8"/>
+            
+            <!-- Tiny crosshairs in corners -->
+            <path d="M 20,20 L 30,20 M 20,20 L 20,30" stroke="rgba(176, 143, 92, 0.35)" stroke-width="1" />
+            <path d="M 500,20 L 490,20 M 500,20 L 500,30" stroke="rgba(176, 143, 92, 0.35)" stroke-width="1" />
+            <path d="M 20,320 L 30,320 M 20,320 L 20,310" stroke="rgba(176, 143, 92, 0.35)" stroke-width="1" />
+            <path d="M 500,320 L 490,320 M 500,320 L 500,310" stroke="rgba(176, 143, 92, 0.35)" stroke-width="1" />
+
+            <!-- Compass Rose indicator -->
+            <g transform="translate(460, 275)">
+              <circle cx="0" cy="0" r="14" class="blueprint-compass" />
+              <path d="M 0,-18 L 0,18 M -18,0 L 18,0" class="blueprint-compass" stroke-dasharray="2,2" />
+              <polygon points="0,-18 -4,-4 0,-7 4,-4" fill="var(--accent-gold)" />
+              <text x="0" y="-22" font-family="var(--font-sans)" font-size="7" font-weight="700" fill="var(--accent-gold)" text-anchor="middle">N</text>
+            </g>
+
+            <!-- Internal Rooms Layouts -->
+            <!-- Master Suite -->
+            <rect x="40" y="40" width="200" height="130" class="blueprint-room" data-room="master-suite" />
+            <text x="140" y="110" class="room-label-svg">Master Suite</text>
+            <text x="140" y="125" font-family="var(--font-sans)" font-size="7" fill="var(--text-muted)" text-anchor="middle" pointer-events="none">1,200 SQ FT</text>
+            
+            <!-- Sky Pool -->
+            <rect x="260" y="40" width="220" height="80" class="blueprint-room" data-room="sky-pool" />
+            <text x="370" y="85" class="room-label-svg">Infinity Sky Pool</text>
+            <text x="370" y="100" font-family="var(--font-sans)" font-size="7" fill="var(--text-muted)" text-anchor="middle" pointer-events="none">75 FT LENGTH</text>
+            
+            <!-- Wellness Wing -->
+            <rect x="260" y="140" width="220" height="160" class="blueprint-room" data-room="wellness-wing" />
+            <text x="370" y="225" class="room-label-svg">Wellness Wing</text>
+            <text x="370" y="240" font-family="var(--font-sans)" font-size="7" fill="var(--text-muted)" text-anchor="middle" pointer-events="none">950 SQ FT</text>
+            
+            <!-- Wine Gallery -->
+            <rect x="40" y="190" width="200" height="110" class="blueprint-room" data-room="wine-gallery" />
+            <text x="140" y="250" class="room-label-svg">Wine Gallery</text>
+            <text x="140" y="265" font-family="var(--font-sans)" font-size="7" fill="var(--text-muted)" text-anchor="middle" pointer-events="none">450 SQ FT</text>
+          </svg>
+        </div>
+        
+        <!-- Room Details Display Right Side -->
+        <div class="room-display-panel">
+          <div class="room-img-frame">
+            <img id="roomImg" class="room-img-display" src="" alt="Room Showcase">
+          </div>
+          <div class="room-details-card">
+            <span class="room-size" id="roomSize">--</span>
+            <h3 class="room-name-display" id="roomName">Select a Room</h3>
+            <p class="room-desc-display" id="roomDesc">Click on any section of the vector blueprint on the left to explore detailed architectural specifications and interior design layouts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sourcing Materials Board Section -->
+  <section class="material-section">
+    <div class="container">
+      <span class="section-tag">Materiality</span>
+      <h2 class="section-title">Architectural Elements</h2>
+      <p class="section-desc">We build with premium raw materials sourced globally, ensuring acoustic damping, structural thermal retention, and timeless beauty.</p>
+      
+      <div class="material-deck" id="materialDeck">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <hr class="arch-divider">
+
+  <!-- Design Your Legacy Home Configurator Section (Price-Free) -->
+  <section class="configurator-section" id="upgrades">
+    <div class="container">
+      <span class="section-tag">Bespoke Studio</span>
+      <h2 class="section-title">Design Your Custom Estate</h2>
+      <p class="section-desc">Select your structural layout, exterior facade materials, and premium upgrades to customize your architectural build configuration.</p>
+      
+      <div class="config-container">
+        <!-- Selection Steps Left Side -->
+        <div class="config-steps">
+          
+          <!-- Step 1: Layout -->
+          <div class="config-step">
+            <div class="step-header-indicator">
+              <div class="step-circle">01</div>
+              <h3 class="config-step-title" style="margin-bottom:0;">Select Structural Layout</h3>
+            </div>
+            <div class="config-options-grid">
+              <div class="config-option selected" data-type="layout" data-id="pavilion">
+                <div class="opt-name">Modernist Pavilion</div>
+                <div class="opt-desc">Single-level cantilevered open layout.</div>
+              </div>
+              <div class="config-option" data-type="layout" data-id="monolith">
+                <div class="opt-name">Vertical Monolith</div>
+                <div class="opt-desc">Multi-level layout with sky elevators.</div>
+              </div>
+              <div class="config-option" data-type="layout" data-id="atrium">
+                <div class="opt-name">Atrium Courtyard</div>
+                <div class="opt-desc">Layout wrapped around a central biophilic garden.</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 2: Facade -->
+          <div class="config-step">
+            <div class="step-header-indicator">
+              <div class="step-circle">02</div>
+              <h3 class="config-step-title" style="margin-bottom:0;">Select Exterior Facade</h3>
+            </div>
+            <div class="config-options-grid">
+              <div class="config-option selected" data-type="facade" data-id="concrete">
+                <div class="opt-name">Raw Concrete</div>
+                <div class="opt-desc">Brutalist luxury textured finish.</div>
+              </div>
+              <div class="config-option" data-type="facade" data-id="travertine">
+                <div class="opt-name">Classic Travertine</div>
+                <div class="opt-desc">Elegant classic limestone stone blocks.</div>
+              </div>
+              <div class="config-option" data-type="facade" data-id="carbon">
+                <div class="opt-name">Smoked Glass & Carbon</div>
+                <div class="opt-desc">Futuristic dark structural sheets.</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 3: Features -->
+          <div class="config-step">
+            <div class="step-header-indicator">
+              <div class="step-circle">03</div>
+              <h3 class="config-step-title" style="margin-bottom:0;">Premium Custom Upgrades</h3>
+            </div>
+            <div class="config-options-list">
+              <div class="config-feature-row" data-id="infinity">
+                <div class="feat-info">
+                  <div class="feat-checkbox"><i class="fa-solid fa-check"></i></div>
+                  <span class="feat-name">75ft Infinity Lap Pool</span>
+                </div>
+              </div>
+              <div class="config-feature-row" data-id="heli">
+                <div class="feat-info">
+                  <div class="feat-checkbox"><i class="fa-solid fa-check"></i></div>
+                  <span class="feat-name">Rooftop Private Heliport</span>
+                </div>
+              </div>
+              <div class="config-feature-row" data-id="spa">
+                <div class="feat-info">
+                  <div class="feat-checkbox"><i class="fa-solid fa-check"></i></div>
+                  <span class="feat-name">Subterranean Zen Wellness Spa</span>
+                </div>
+              </div>
+              <div class="config-feature-row" data-id="security">
+                <div class="feat-info">
+                  <div class="feat-checkbox"><i class="fa-solid fa-check"></i></div>
+                  <span class="feat-name">Military Grade Biometric Shield</span>
+                </div>
+              </div>
+              <div class="config-feature-row" data-id="solar">
+                <div class="feat-info">
+                  <div class="feat-checkbox"><i class="fa-solid fa-check"></i></div>
+                  <span class="feat-name">Solar Grid + Geothermal Power Cells</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sticky Summary Panel Right Side (Price-Free) -->
+        <div class="config-summary-panel">
+          <h3 class="summary-title">Configuration Summary</h3>
+          <div class="summary-list">
+            <div class="summary-item">
+              <span class="summary-item-label">Selected Layout</span>
+              <span class="summary-item-val" id="sumLayout">--</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-item-label">Exterior Facade</span>
+              <span class="summary-item-val" id="sumFacade">--</span>
+            </div>
+            <div class="summary-item-label" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing:0.1em; margin-top:14px; font-weight:600; color:var(--text-muted);">Bespoke Upgrades</div>
+            <div id="sumFeaturesList">
+              <!-- Upgrades list rendered dynamically -->
+            </div>
+          </div>
+          
+          <button class="config-cta-btn" id="prefillContactBtn">Prefill Inquiry Form</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhood Map Explorer Section -->
+  <section class="map-section">
+    <div class="container">
+      <span class="section-tag">Prime Locations</span>
+      <h2 class="section-title">Neighborhood Blueprint</h2>
+      <p class="section-desc">Explore landmarks, lifestyle spots, transit access, and schools relative to our flagship Malibu estate.</p>
+      
+      <div class="map-grid">
+        <!-- SVG Map Left Side -->
+        <div class="map-viewport">
+          <svg class="map-canvas-svg" id="mapCanvas" viewBox="0 0 1000 625">
+            <!-- Grid Background Overlay -->
+            <pattern id="mapGridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 0, 0, 0.01)" stroke-width="0.8"/>
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#mapGridPattern)"/>
+            
+            <!-- Coastline / Ocean Water Body -->
+            <path class="map-water-body" d="M 0,380 C 250,380 400,450 500,450 C 600,450 750,420 1000,440 L 1000,625 L 0,625 Z" />
+            
+            <!-- Contour Lines (Topography representation) -->
+            <path class="map-contour-lines" d="M 0,100 Q 300,80 500,120 T 1000,90" />
+            <path class="map-contour-lines" d="M 0,180 Q 250,220 500,190 T 1000,210" />
+            <path class="map-contour-lines" d="M 0,280 Q 350,250 500,300 T 1000,290" />
+            
+            <!-- Roads layout -->
+            <path class="map-primary-roads" d="M 0,220 L 1000,220" />
+            <path class="map-primary-roads" d="M 500,0 L 500,625" />
+            
+            <!-- Center Estate Marker (flagship) -->
+            <g class="estate-center">
+              <circle cx="500" cy="312" r="7" fill="var(--text-primary)" stroke="var(--accent-gold)" stroke-width="2" />
+              <circle cx="500" cy="312" r="24" class="map-center-estate-ring" />
+              <text x="500" y="278" font-family="var(--font-sans)" font-size="10" font-weight="700" fill="var(--text-primary)" text-anchor="middle" letter-spacing="0.1em">THE AURA CLIFFHOUSE</text>
+            </g>
+            
+            <!-- Dynamic markers will be injected here by app.js -->
+          </svg>
+        </div>
+
+        <!-- Sidebar List Right Side -->
+        <div class="map-menu-card">
+          <div class="map-filter-buttons">
+            <button class="map-filter-btn active" data-category="dining">
+              <i class="fa-solid fa-utensils"></i> Dining
+            </button>
+            <button class="map-filter-btn" data-category="transit">
+              <i class="fa-solid fa-helicopter"></i> Transit
+            </button>
+            <button class="map-filter-btn" data-category="lifestyle">
+              <i class="fa-solid fa-compass"></i> Lifestyle
+            </button>
+            <button class="map-filter-btn" data-category="education">
+              <i class="fa-solid fa-graduation-cap"></i> Education
+            </button>
+          </div>
+          <div class="map-pois-list" id="poiList">
+            <!-- Points list rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collector Reviews Section -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="reviews-carousel-container">
+        <div class="review-slide-track">
+          
+          <div class="review-slide">
+            <p class="review-quote">"Ayaan Developers doesn't just build homes; they compose space. The structural glass elements of our penthouse create a living connection with the Manhattan skyline that we never thought possible."</p>
+            <h4 class="review-author">Alexander & Viviana Mercer</h4>
+            <div class="review-role">Owners, Elysium Sky Duplex</div>
+          </div>
+          
+          <div class="review-slide">
+            <p class="review-quote">"The engineering precision of the Monolith Estate is spectacular. Integrating geothermal energy grids with Brutalist off-form concrete creates a home that is as sustainable as it is beautiful."</p>
+            <h4 class="review-author">Dr. Francois Vasseur</h4>
+            <div class="review-role">Philanthropist & Art Collector</div>
+          </div>
+
+          <div class="review-slide">
+            <p class="review-quote">"The material choices are impeccable. Roman Travertine stone combined with smoked Japanese brass Details creates a luxurious, minimalist texture that feels incredibly custom and premium."</p>
+            <h4 class="review-author">Elena Rostova</h4>
+            <div class="review-role">Bespoke Home Collector</div>
+          </div>
+
+        </div>
+        
+        <div class="carousel-nav">
+          <button class="carousel-nav-btn" id="prevReviewBtn" aria-label="Previous Review">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-nav-btn" id="nextReviewBtn" aria-label="Next Review">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Inquiries Section & Request Configurator Form -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      
+      <!-- Contact Details Left Side -->
+      <div>
+        <span class="section-tag">Private Office</span>
+        <h2 class="section-title">Begin Your Legacy</h2>
+        <p class="section-desc">Schedule a private digital walkthrough, or request details on active structural builds.</p>
+        
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <i class="fa-solid fa-map-pin"></i>
+            <div>
+              <div class="info-item-label">Global Headquarters</div>
+              <div class="info-item-val">8800 Wilshire Blvd, Beverly Hills, CA</div>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <div class="info-item-label">Direct Lines</div>
+              <div class="info-item-val" style="display: flex; flex-direction: column; gap: 4px;">
+                <a href="tel:7291080080" class="gold-text" style="-webkit-text-fill-color: initial;">+91 72910 80080</a>
+                <a href="tel:8053752288" class="gold-text" style="-webkit-text-fill-color: initial;">+91 80537 52288</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <div class="info-item-label">Secure Inquiries</div>
+              <div class="info-item-val"><a href="mailto:ayaandevelopers.official@gmail.com" class="gold-text" style="-webkit-text-fill-color: initial;">ayaandevelopers.official@gmail.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inquiry Form Right Side -->
+      <div class="contact-form-wrapper">
+        <h3 class="form-title">Request Information</h3>
+        <div class="config-summary-prefill" id="configPrefillBanner">
+          <div>
+            <i class="fa-solid fa-gears" style="color: var(--accent-gold); margin-right: 8px;"></i>
+            <span>Configured Build: <strong id="prefillSummary">--</strong></span>
+          </div>
+          <button id="clearPrefill">Clear</button>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group-row">
+            <div class="form-input-wrapper">
+              <label for="contactName">Full Name</label>
+              <input type="text" id="contactName" placeholder="Enter name" required>
+            </div>
+            <div class="form-input-wrapper">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" placeholder="Enter email" required>
+            </div>
+          </div>
+          <div class="form-input-wrapper">
+            <label for="contactSubject">Inquiry Interest</label>
+            <input type="text" id="contactSubject" placeholder="e.g. Aura Cliffhouse Walkthrough" required>
+          </div>
+          <div class="form-input-wrapper">
+            <label for="contactMessage">Custom Requirements</label>
+            <textarea id="contactMessage" rows="5" placeholder="Specify your desired architecture layout, upgrades, or locations..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            Submit Private Inquiry <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-left">
+        <h4>AYAAN DEVELOPERS</h4>
+        <p>Ayaan Developers designs, engineers, and manages exclusive minimalist residential real estate globally. We build lasting spaces that frame natural beauty.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to private catalog announcements.'); this.reset();">
+          <input type="email" class="newsletter-input" placeholder="Join the private catalog mailing list" required>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-links">
+        <h5>DESIGN HUBS</h5>
+        <ul>
+          <li><a href="#">Beverly Hills Studio</a></li>
+          <li><a href="#">Zurich Architecture Lab</a></li>
+          <li><a href="#">Tokyo Craftsmanship Hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>LEGAL PORTAL</h5>
+        <ul>
+          <li><a href="#">Terms of Sourcing</a></li>
+          <li><a href="#">Privacy Agreement</a></li>
+          <li><a href="#">Sustainability Certifications</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Ayaan Developers. All structural rights reserved.</div>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Architectural Material Board Detail Popup Modal -->
+  <div class="material-modal" id="materialModal">
+    <div class="mat-modal-content">
+      <button class="close-mat-modal" id="closeMatModal" aria-label="Close details modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="mat-modal-grid">
+        <img id="matModalImg" class="mat-modal-img" src="" alt="Material Texture Detail">
+        <div class="mat-detail-body">
+          <h3 id="matModalName">Material Name</h3>
+          <div class="mat-detail-origin" id="matModalOrigin">Origin: --</div>
+          <p class="mat-detail-desc" id="matModalDesc">Detailed explanation of architectural sourcing and structural performance.</p>
+          <div class="mat-detail-properties" id="matModalProps">
+            <!-- Dynamically populated checklist -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Database Data First, then Main Logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
