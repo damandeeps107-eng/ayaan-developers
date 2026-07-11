@@ -1981,3 +1981,60 @@ img {
     font-size: 0.7rem;
   }
 }
+
+/* Floating WhatsApp Widget Styling */
+.floating-whatsapp-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  transition: var(--transition-smooth);
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #25d366;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+  background: #20ba5a;
+  color: #ffffff;
+}
+
+.whatsapp-btn i {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .floating-whatsapp-widget {
+    bottom: 20px;
+    right: 20px;
+  }
+  .whatsapp-btn {
+    padding: 12px 12px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  .whatsapp-btn i {
+    font-size: 1.5rem;
+  }
+  .whatsapp-btn span {
+    display: none; /* Hide text on mobile for minimalist circular layout */
+  }
+}
