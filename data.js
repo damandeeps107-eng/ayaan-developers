@@ -9,15 +9,15 @@ const propertiesData = [
     beds: 5,
     baths: 6,
     sqft: 8500,
-    image: "../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_golden_1783766701690.png",
+    image: "assets/hero_golden.png",
     tag: "Signature",
     description: "Suspended on a majestic cliffside above the Pacific, The Aura Cliffhouse represents the absolute pinnacle of luxury architectural minimalism. Engineered with premium concrete, glass, and carbon-steel, this sanctuary features double-height ceilings, a 75-foot infinity lap pool that blends with the horizon, custom Italian finishes, and automated smart-home intelligence.",
     features: ["Infinity Pool", "Oceanfront", "Smart Automation", "Wellness Suite", "Private Heliport", "Car Gallery"],
     timeline: {
-      dawn: "../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_dawn_1783766680159.png",
-      golden: "../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_golden_1783766701690.png",
-      dusk: "../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_dusk_1783766720975.png",
-      night: "../../brain/eeb9852d-9666-4335-a27f-0a971e79f554/hero_night_1783766740739.png"
+      dawn: "assets/hero_dawn.png",
+      golden: "assets/hero_golden.png",
+      dusk: "assets/hero_dusk.png",
+      night: "assets/hero_night.png"
     },
     rooms: [
       {
